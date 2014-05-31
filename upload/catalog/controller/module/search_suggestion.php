@@ -9,7 +9,7 @@ class ControllerModuleSearchSuggestion extends Controller {
 		// Module: Search Autocomplete
 		//########################################################################
 		$this->data['search_json'] = HTTP_SERVER . 'index.php?route=product/search_json';
-                var_dump($this->data['search_json']);
+             //   var_dump($this->data['search_json']);
 		//########################################################################
 		// Module: Search Autocomplete
 		//########################################################################
