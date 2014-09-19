@@ -108,7 +108,6 @@ class ControllerProductSearchJson extends Controller {
 				}
 				     
 				$this->load->model('catalog/review');
-				//$this->load->model('tool/seo_url'); 
 				$this->load->model('tool/image');
 				
 				$this->data['button_add_to_cart'] = $this->language->get('button_add_to_cart');
@@ -155,8 +154,9 @@ class ControllerProductSearchJson extends Controller {
             			'name'    => $result['name'],
 						'model'   => $result['model'],
             			'price'   => $price,
-						//'href'    => $this->model_tool_seo_url->rewrite(HTTP_SERVER . 'index.php?route=product/product&keyword=' . $this->request->get['keyword'] . $url . '&product_id=' . $result['product_id']),
-						'href'    => HTTP_SERVER . 'index.php?route=product/product&keyword=' . $this->request->get['keyword'] . $url . '&product_id=' . $result['product_id'],
+            			
+						'href'    => $this->url->link('product/product'. '&product_id=' . $result['product_id'] . '&keyword=' . $this->request->get['keyword']),
+						//'href'    => HTTP_SERVER . 'index.php?route=product/product&keyword=' . $this->request->get['keyword'] . $url . '&product_id=' . $result['product_id'],
           			);
                         }
 				
